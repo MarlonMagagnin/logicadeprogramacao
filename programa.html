@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>Calculando o IMC</title>
+</head>
+<body>
+
+<script>
+
+	function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+function calculaIMC(altura, peso){
+    return peso / (altura * altura);
+}
+
+let nome = prompt("Informe seu nome:");
+var alturaInformada = parseFloat(prompt("Informe sua altura:").replace(",","."));
+var pesoInformado = parseFloat(prompt("Informe seu peso:").replace(",","."));
+
+var imc = calculaIMC(alturaInformada, pesoInformado);
+mostra(`${nome}, o seu IMC é ${imc}`);
+
+if(imc < 18.5){
+    mostra("Você está na faixa da magresa.")
+}else if (imc > 18.5 &&  imc < 24.9){
+    mostra("Você está no peso ideal.")
+}else if (imc > 24.9 && imc < 29.9){
+    mostra("Você está com sobrepeso.")
+}else if(imc > 29.9 && imc < 39.9){
+    mostra("Você está com obesidade grau 2.")
+}else {
+    mostra("Você está com obesidade grave, com grau 3 risco de morte certa.")
+}
+
+
+</script>
+</body>
+</html>
+
+

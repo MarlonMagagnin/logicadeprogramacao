@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>Ano Copas</title>
+</head>
+<body>
+
+<script>
+
+	function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+var anoAtual = parseInt(prompt("Qual o ano limite que você deseja?"));
+var anoCopa = 1930;
+var cont = 0
+
+while (anoCopa <= anoAtual){
+	mostra(`Teve copa no ano ${anoCopa}`);
+	anoCopa = anoCopa + 4
+	if(anoCopa == 1942){
+		anoCopa = anoCopa + 8
+	}
+	cont = cont + 1 
+}
+mostra(`Tiveram ${cont} copas.`)
+
+
+</script>
+</body>
+</html>
+
+

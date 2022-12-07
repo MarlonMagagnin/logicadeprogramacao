@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>Jogo adivinhação</title>
+</head>
+<body>
+
+<script>
+
+	function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+function sorteia(n){
+	return Math.round(Math.random() * n);
+}
+
+let numeroPensado = sorteia(100);
+console.log(numeroPensado)
+
+var chute = ""
+let tentativas = 0
+let maximoTentativas = 3
+	while (tentativas < maximoTentativas){
+		chute = parseInt(prompt("Digite o seu palpite:(Números entre 1 - 100) - Só terá 3 tentativas."));
+		if(chute < numeroPensado){
+			alert("O seu palpite foi menor que o número pensado. Tente novamente!");
+		} else if ( chute > numeroPensado){
+			alert("O seu palpite foi maior que o número pensado. Tente novamente!");
+		} else if (chute == numeroPensado){
+			mostra("ACERTOU");
+			break;
+		}else {
+			if (tentativas == 2){
+				mostra("Você atingiu o número máximo de tentativas");
+			} else {
+				}
+	}
+		tentativas++
+	}
+</script>
+</body>
+</html>
+
+

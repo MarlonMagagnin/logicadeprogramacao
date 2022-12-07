@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Advinha mais</title>
+</head>
+<body>
+	<label>Digite seu número:</label>
+	<input autofocus id="numero" type="number" name=""><br>
+	<button onclick="comparar()">Compare o número</button><br><br>
+	<button onclick="gerarNumero()">Gerar número</button>
+	<script>
+
+		function sorteia(n){
+			return Math.round(Math.random() * n + 1);
+		}
+
+		/* essa função para gerar só um número
+		let meuNumero = ""
+		function gerarNumero(){
+			meuNumero = sorteia(100);
+			console.log(meuNumero)
+		}*/
+		
+		
+		function gerarNumero(){
+			let segredos = []
+			let quantidade = 6
+			for (var i = 0; i < quantidade; i++) {
+				segredos.push(sorteia(59));
+				console.log(segredos)
+			}
+			return segredos;
+		}
+
+		function comparar(){
+			var achou = false;
+			let numero = parseInt(document.getElementById('numero').value);
+			for (var i = 0; i < segredos.length; i++){
+				if (numero == segredos[i]){
+					alert("Você acertou")
+					achou = true;
+					break;
+				}
+			}
+			 if(achou == false) {
+              alert("Você ERROU!");
+      	 	}
+      	 	document.getElementById("numero").value = "";
+		}
+
+		/* essa função só se for um numero 
+			function comparar(){
+			let numero = parseInt(document.getElementById('numero').value);
+			if (numero == meuNumero){
+				alert("Acertou");
+			}else {
+				alert("Errou");
+			}
+			document.getElementById("numero").value = "";
+		}*/
+
+		
+	</script>
+</body>
+</html>
+
+

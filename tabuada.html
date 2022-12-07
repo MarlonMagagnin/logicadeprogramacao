@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>Tabuada</title>
+</head>
+<body>
+
+<h1>Tabuada</h1>
+<label>Insira seu número: </label>
+<input type="number" id="numero">
+<br>
+
+<button onclick="calcular()">calcular</button>
+<br>
+
+<label>O valor da multiplicação de: </label><strong id="resultado"></strong>
+
+<script type="">
+
+    function calcular(){
+        var numero = parseInt(document.getElementById('numero').value);
+        const resultado = []
+        for (var i = 1; i <= 10; i++) {
+            let soma = numero * i
+            resultado.push(soma)
+            console.log(resultado)
+            document.getElementById("resultado").innerHTML = resultado 
+        }
+   }
+</script>
+
+</body>
+</html> 

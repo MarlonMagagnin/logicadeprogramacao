@@ -1,0 +1,43 @@
+     <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+    <title>Média idade</title>
+    </head>
+    <body>
+
+    <h1>Média idades</h1>
+
+    <script type="">
+
+        function pulaLinha() {
+        document.write("<br><hr><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+        var familiares = prompt("Qual o número de familiares que deseja calcular?")
+        
+        var idades = []
+
+        for (var i = 0; i < familiares; i++) {
+             idade = parseInt(prompt("Informe idade do familiar:"));
+             idades.push(idade)
+        }
+        var soma = idades.reduce(function(soma, i) {
+            return soma + i;
+        });
+
+        let media = soma / familiares
+        let mediaArredondada = media.toFixed(2);
+        mostra("O total de familiares é: " + familiares)
+        mostra("A soma de todas as idades é: " + soma);
+        mostra("A média de todas as idades é: " + mediaArredondada);
+        
+    </script>
+
+    </body>
+    </html> 
